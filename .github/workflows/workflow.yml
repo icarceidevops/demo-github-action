@@ -1,7 +1,7 @@
 name: Web page
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:  
 permissions:
   contents: read
@@ -14,7 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps: 
-      - name: Helloe World
+      - name: Hello World
         run: echo "Hello World"
       - name: Clone repository
         uses: actions/checkot@v3
