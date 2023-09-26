@@ -19,7 +19,7 @@ jobs:
       - name: Validate html
         uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
-          path: dist/
+          root: dist/
       - name: check environment
         run: echo "${{secrets.author_name}}""
       - name: check version
@@ -44,7 +44,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist/
+          path: "./dist/"
       - name: Deployment
         id: deploymentID
         uses: actions/deploy-pages@v2
