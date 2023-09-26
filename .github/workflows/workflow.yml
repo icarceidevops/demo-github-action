@@ -17,4 +17,4 @@ jobs:
       - name: Helloe World
         run: echo "Hello World"
       - name: Clone repository
-        run: git clone git@github.com:icarceidevops/demo-github-action.git
+        uses: actions/checkot@v3
