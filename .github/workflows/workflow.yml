@@ -20,6 +20,11 @@ jobs:
         uses: Cyb3r-Jak3/html5validator-action@v7.2.0
         with:
           root: dist/
+      - name: check environment
+        run: echo "${{secrets.author_name}}""
+      - name: check version
+        run: echo "${{env.version}}"
+
 
   deploy:
     needs: [ test ]
@@ -32,6 +37,8 @@ jobs:
         run: echo "Hello World"
       - name: Clone repository
         uses: actions/checkout@v3
+      - name: Set Environment
+        run: sed -i -e "s/{author_name}/${{secrets.author_name}}/g"
       - name: setup github pages
         uses: actions/configure-pages@v3
       - name: upload artifact
