@@ -18,3 +18,5 @@ jobs:
         run: echo "Hello World"
       - name: Clone repository
         uses: actions/checkot@v3
+      - name: setup github pages
+        uses: actions/configure-pages@v3
